@@ -8,9 +8,8 @@ mongoose.connect("mongodb://goweek:goweek123@ds041177.mlab.com:41177/goweek-vini
   useNewUrlParser: true
 });
 
-app.get('/', (req, res) => {
-  return res.send('Hello World');
-});
+app.use(express.json());
+app.use(require('./routes'));
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');
